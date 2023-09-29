@@ -17,9 +17,9 @@ try:
             # aqui eu criei essa cópia do dicionário
             # isso ocorre pois, se eu alterar um valor do dicionário, mesmo já dentro da lista, ele altera todos os valores
             copia = dict(dicionario_itens)
-            lista_itens.append(copia)    
+            lista_itens.append(copia)  
+        with open('dados.json', mode ='w', encoding='utf-8') as arquivo_json: # aqui, caso o arquivo não exista, ele cria
+            print(f'arquivo {arquivo_json.name} gerado com sucesso!')
+            json.dump(lista_itens, arquivo_json, indent=2, ensure_ascii=False)  
 except FileNotFoundError:
     print('Arquivo não encontrado')
-with open('dados.json', mode ='w', encoding='utf-8') as arquivo_json: # aqui, caso o arquivo não exista, ele cria
-    print(f'arquivo {arquivo_json.name} gerado com sucesso!')
-    json.dump(lista_itens, arquivo_json, indent=2, ensure_ascii=False)
